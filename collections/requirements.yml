@@ -1,4 +1,8 @@
 ---
-
-- src: awx.awx
-  
+collections: 
+  - name: awx.awx
+  - name: cisco.ios
+  - name: cisco.aci
+  - name: cisco.nxos
+  - name: f5networks.f5_modules
+  - name: paloaltonetworks.panos
