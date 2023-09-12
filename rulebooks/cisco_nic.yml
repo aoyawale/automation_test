@@ -1,0 +1,12 @@
+- name: Example
+  hosts: all
+  sources:
+    - name: range
+      range:
+        limit: 5
+  rules:
+    - name: Start Cisco NIC
+      condition: facts.nic.down == true
+      action:
+        run_playbook:
+          name: start_nic.yml

@@ -1,0 +1,17 @@
+- name: Example
+  hosts: all
+  sources:
+    - name: range
+      range:
+        limit: 5
+  rules:
+    - name: Start Cisco NIC
+      condition: facts.nic.down == true
+      action:
+        run_job_template:
+          name: "Start Cisco NIC"
+          organization: Default
+          job_args:
+            extra_vars:
+              alerts: "{{ facts.nic }}"
+              alertStatus: "{{ facts.nic.status }}"
