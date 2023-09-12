@@ -1,0 +1,8 @@
+---
+
+  - hosts: localhost
+    tasks:
+      - name: gather data
+        ansible.buildin.setup: 
+          gather_subset:
+            - '!all'

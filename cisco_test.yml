@@ -1,0 +1,18 @@
+---
+
+- name: Listen for alerts using alert manager
+  hosts: localhost
+
+  sources:
+    - name: listen for alerts
+      ansible.eda.alertmanager:
+        host: 0.0.0.0
+        port: 5001
+
+  rules:
+    - name: Run playbook to start NIC
+      condition: event.payload.status == "firing" or event.payload.status == "resolved"
+      actions:
+        - run_job_template:
+            name: "cisco nic up"
+            organization: Default
