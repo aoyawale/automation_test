@@ -3,6 +3,6 @@
   - hosts: all
     tasks:
       - name: gather data
-        ansible.buildin.setup: 
+        ansible.builtin.setup: 
           gather_subset:
             - '!all'
