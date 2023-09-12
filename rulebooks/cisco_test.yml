@@ -8,13 +8,21 @@
       ansible.eda.alertmanager:
         host: 0.0.0.0
         port: 5001
-
+    - name: check local files
+      ansible.eda.file:
+      files:
+        - facts.yml
   rules:
     - name: Run playbook to start NIC
       condition:
         all: 
-          - fact.ansible_net_interfaces[0].state == "down" 
+          - fact.ansible_net_interfaces.[0].state == "down" 
+          - fact.gathered.enabled == "false"
+
       actions:
         - run_job_template:
             name: "cisco nic up"
             organization: Default
+            job_args:
+              extra_vars:
+                
