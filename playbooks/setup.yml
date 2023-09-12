@@ -2,7 +2,6 @@
 
   - hosts: all
     tasks:
-      - name: gather data
-        ansible.builtin.setup: 
-          gather_subset:
-            - '!all'
+      - name: gather nxos data from the devices
+        cisco.nxos.nxos_facts:
+          gather_subset: all
