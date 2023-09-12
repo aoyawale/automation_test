@@ -11,7 +11,9 @@
 
   rules:
     - name: Run playbook to start NIC
-      condition: event.payload.status == "firing" or event.payload.status == "resolved"
+      condition:
+        all: 
+          - fact.ansible_net_interfaces[0].state == "down" 
       actions:
         - run_job_template:
             name: "cisco nic up"
