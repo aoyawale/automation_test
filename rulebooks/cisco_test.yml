@@ -11,7 +11,7 @@
     - name: check local files
       ansible.eda.file:
       files:
-        - facts.yml
+        - /var/log/nic.yml
   rules:
     - name: Run playbook to start NIC
       condition:
@@ -21,7 +21,7 @@
 
       actions:
         - run_job_template:
-            name: "cisco nic up"
+            name: "nxos_nic_up"
             organization: Default
             job_args:
               extra_vars:

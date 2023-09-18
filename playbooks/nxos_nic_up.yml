@@ -1,0 +1,10 @@
+---
+
+
+  - hosts: all
+    tasks:
+      - name: Gather interfaces facts
+        cisco.nxos.nxos_interfaces:
+          config:
+            - name: "{{ name_nic }}"
+              enabled: "true"
