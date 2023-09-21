@@ -14,13 +14,15 @@
     - name: Run playbook to start NIC
       condition:
         all: 
-          - fact.ansible_net_interfaces.[0].state == "down" 
-          - fact.gathered.enabled == "false"
+          - facts.ansible_net_interfaces.[0].state == "down" 
+          - facts.gathered.enabled == "false"
 
       action:
-        run_job_template:
-          name: "nxos_nic_up"
-          organization: Default
-          job_args:
-            extra_vars:
+        debug:
+        
+        #run_job_template:
+        #  name: "nxos_nic_up"
+        #  organization: Default
+        #  job_args:
+        #    extra_vars:
                 
