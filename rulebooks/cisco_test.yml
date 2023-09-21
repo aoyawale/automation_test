@@ -1,7 +1,7 @@
 ---
 
 - name: Listen for alerts using alert manager
-  hosts: localhost
+  hosts: all
 
   sources:
     #- ansible.eda.alertmanager:
