@@ -4,12 +4,12 @@
   hosts: all
 
   sources:
-    #- ansible.eda.alertmanager:
-    #    host: 0.0.0.0
-    #    port: 5000
-    - ansible.eda.file:
-      files:
-        - /var/log/nic.yml
+    - ansible.eda.alertmanager:
+        host: 0.0.0.0
+        port: 5000
+    #- ansible.eda.file:
+    #  files:
+    #    - /var/log/nic.yml
   rules:
     - name: Run playbook to start NIC
       condition:
@@ -19,7 +19,7 @@
 
       action:
         debug:
-        
+
         #run_job_template:
         #  name: "nxos_nic_up"
         #  organization: Default
