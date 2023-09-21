@@ -5,8 +5,8 @@
 
   sources:
     - ansible.eda.alertmanager:
-        host: all
-        port: 5000
+        host: 10.253.36.109
+        port: 5001
     #- ansible.eda.file:
     #  files:
     #    - /var/log/nic.yml
