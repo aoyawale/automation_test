@@ -14,7 +14,7 @@
     - name: Run playbook to start NIC
       condition:
         all: 
-          - facts.ansible_net_interfaces.[0].state == "down" 
+          #- facts.ansible_net_interfaces.[0].state == "down" 
           - facts.gathered.enabled == "false"
 
       action:
