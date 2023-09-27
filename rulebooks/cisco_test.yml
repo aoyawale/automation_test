@@ -5,7 +5,7 @@
 
   sources:
     - ansible.eda.alertmanager:
-        host: 0.0.0.0
+        host: localhost
         port: 5001
     #- ansible.eda.file:
     #  files:
