@@ -19,15 +19,15 @@
       #    - result[1] contains Ethernet1/2
       #  register: result
 
-      - name: debug results
-        ansible.builtin.debug:
-          msg: "{{ result }}"
+      #- name: debug results
+      #  ansible.builtin.debug:
+      #    msg: "{{ result }}"
 
-      - name: "restart nic"
-        cisco.nxos.nxos_command:
-          commands: 
-          - "config t"
-          - command: int Ethernet1/2 ; no shut"
+      #- name: "restart nic"
+      #  cisco.nxos.nxos_command:
+      #    commands: 
+      #    - "config t"
+      #    - command: int Ethernet1/2 ; no shut"
             #- "show version"
             #- "show int"
           #- command: "config t"
