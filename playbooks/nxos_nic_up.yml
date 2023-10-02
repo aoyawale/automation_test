@@ -9,15 +9,15 @@
           - name: Ethernet1/2
             description: configured by ansible
             enabled: true
-      - name: run multiple commands and evaluate the output
-        cisco.nxos.nxos_command:
-          commands:
-          - config t #show version
-          - #show interfaces
-          wait_for:
-          - result[0] contains config
-          - result[1] contains Ethernet1/2
-        register: result
+      #- name: run multiple commands and evaluate the output
+      #  cisco.nxos.nxos_command:
+      #    commands:
+      #    - config t #show version
+      #    - #show interfaces
+      #    wait_for:
+      #    - result[0] contains config
+      #    - result[1] contains Ethernet1/2
+      #  register: result
 
       - name: debug results
         ansible.builtin.debug:
