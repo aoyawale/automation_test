@@ -14,8 +14,10 @@
     #    - /var/log/nic.yml
   rules:
     - name: Run playbook to start NIC
-      condition:
-        all: 
+      condition: event.i == 1
+
+        #all:
+
           #- facts.ansible_net_interfaces.[0].state == "down" 
           #- facts.gathered.enabled == "false"
       action:
