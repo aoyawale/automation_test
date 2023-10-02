@@ -4,9 +4,11 @@
   hosts: all
 
   sources:
-    - ansible.eda.alertmanager:
-        host: localhost
-        port: 5001
+    - ansible.eda.range:
+        limit: 5  
+    #- ansible.eda.alertmanager:
+    #    host: localhost
+    #    port: 5001
     #- ansible.eda.file:
     #  files:
     #    - /var/log/nic.yml
@@ -15,10 +17,12 @@
       condition:
         all: 
           #- facts.ansible_net_interfaces.[0].state == "down" 
-          - facts.gathered.enabled == "false"
-
+          #- facts.gathered.enabled == "false"
       action:
-        debug:
+        run_playbook:
+          name: ansible.eda.nxos_nic_up
+          
+          #"playbooks/nxos_nic_up.yml"
 
         #run_job_template:
         #  name: "nxos_nic_up"

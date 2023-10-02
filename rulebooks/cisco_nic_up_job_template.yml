@@ -9,9 +9,9 @@
       condition: facts.nic.down == true
       action:
         run_job_template:
-          name: "Start Cisco NIC"
+          name: "restart nic"
           organization: Default
           job_args:
-            extra_vars:
-              alerts: "{{ facts.nic }}"
-              alertStatus: "{{ facts.nic.status }}"
+            #extra_vars:
+            #  alerts: "{{ facts.nic }}"
+            #  alertStatus: "{{ facts.nic.status }}"
