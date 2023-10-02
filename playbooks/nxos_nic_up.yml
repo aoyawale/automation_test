@@ -3,7 +3,12 @@
 
   - hosts: all
     tasks:
-
+      - name: use interface module
+        cisco.nxos.nxos_interfaces:
+          config:
+          - name: Ethernet1/2
+            description: configured by ansible
+            enabled: true
       - name: run multiple commands and evaluate the output
         cisco.nxos.nxos_command:
           commands:
