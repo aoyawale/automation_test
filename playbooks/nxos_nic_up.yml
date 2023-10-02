@@ -6,7 +6,7 @@
       - name: "restart nic"
         cisco.nxos.nxos_command:
           commands:
-            - "show version"
+            #- "show version"
             - "show interfaces"
             #- "configure terminal"
             #- "int Ethernet1/2"
