@@ -8,8 +8,8 @@
           commands:
             #- "show version"
             #- "show int"
-            - command: "config t"
-            - command: "int Ethernet1/2"
-            - command: "no shut"
+          - command: "config t"
+          - command: "int Ethernet1/2"
+          - command: "no shut"
 
 
