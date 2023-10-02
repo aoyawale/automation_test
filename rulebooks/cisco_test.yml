@@ -21,14 +21,14 @@
           #- facts.ansible_net_interfaces.[0].state == "down" 
           #- facts.gathered.enabled == "false"
       action:
-        run_playbook:
-          name: ansible.eda.nxos_nic_up
+        #run_playbook:
+        #  name: ansible.eda.nxos_nic_up
           
           #"playbooks/nxos_nic_up.yml"
 
-        #run_job_template:
-        #  name: "nxos_nic_up"
-        #  organization: Default
+        run_job_template:
+          name: "nxos_nic_up"
+          organization: Default
         #  job_args:
         #    extra_vars:
                 
