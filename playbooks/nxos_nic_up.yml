@@ -7,9 +7,9 @@
         cisco.nxos.nxos_command:
           commands:
             #- "show version"
-            - "show int"
-            #- "configure terminal"
-            #- "int Ethernet1/2"
-            #- "no shut"
+            #- "show int"
+            - "config t"
+            - "int Ethernet1/2"
+            - "no shut"
 
 
