@@ -9,7 +9,7 @@
             #- "show version"
             #- "show int"
             - "config t"
-            - "int Ethernet1/2"
-            - "no shut"
+            - command: "int Ethernet1/2"
+            - command: "no shut"
 
 
