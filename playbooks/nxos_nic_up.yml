@@ -5,7 +5,9 @@
     tasks:
       - name: "restart nic"
         cisco.nxos.nxos_command:
-          commands: "config t ; int Ethernet1/2 ; no shut"
+          commands: 
+          - "config t"
+          - command: int Ethernet1/2 ; no shut"
             #- "show version"
             #- "show int"
           #- command: "config t"
