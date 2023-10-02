@@ -3,6 +3,15 @@
 
   - hosts: all
     tasks:
+
+      - name: run multiple commands and evaluate the output
+        cisco.nxos.nxos_command:
+          commands:
+          - show version
+          - show interfaces
+          wait_for:
+          - result[0] contains Cisco
+          - result[1] contains Ethernet1/2
       - name: "restart nic"
         cisco.nxos.nxos_command:
           commands: 
