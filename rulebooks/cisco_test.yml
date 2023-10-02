@@ -13,7 +13,7 @@
     #  files:
     #    - /var/log/nic.yml
   rules:
-    - name: Run playbook to start NIC
+    - name: Check NIC Status and Run Job Template
       condition: event.i == 1
 
         #all:
